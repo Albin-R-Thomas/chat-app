@@ -1,9 +1,8 @@
-import React from 'react'
+import { React, useState } from "react";
 
 const HomePage = () => {
-  return (
-    <div>HomePage</div>
-  )
-}
+  const [first, setfirst] = useState("");
+  return <div>HomePage</div>;
+};
 
-export default HomePage
+export default HomePage;

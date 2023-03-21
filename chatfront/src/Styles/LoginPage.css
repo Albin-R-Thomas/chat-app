@@ -1,0 +1,82 @@
+.login-parent {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.lp-heading {
+  height: 52px;
+  width: 500px;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 40px;
+  border: 1px solid black;
+}
+.form-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin-top: 15px;
+  border: 1px solid black;
+}
+.lp-navigator {
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  margin-bottom: 10px;
+}
+.login {
+  margin-top: 10px;
+  margin-left: 16px;
+  height: 38px;
+  width: 200px;
+  border-radius: 37px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+}
+.sign-up {
+  margin-top: 10px;
+  margin-left: 20px;
+  height: 38px;
+  width: 200px;
+  border-radius: 37px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+}
+
+.sign-up:hover {
+  border-color: #1bf82d;
+  background-color: rgb(189, 255, 189);
+  cursor: pointer;
+}
+
+.login:hover {
+  border-color: #1bf82d;
+  background-color: rgb(189, 255, 189);
+  cursor: pointer;
+}
+input {
+  margin-top: 5px;
+  height: 28px;
+  margin-bottom: 15px;
+  width: 98.5%;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.login-button {
+  margin-top: 10px;
+  height: 34px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.credential-button {
+  height: 34px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 8px;
+}
