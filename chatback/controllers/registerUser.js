@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const generateToken = require("../config/generateToken");
 const User = require("../models/userModel");
 const registerUser = asyncHandler(async (req, res) => {
   const { name, password, email, pic } = req.body;
@@ -26,6 +27,7 @@ const registerUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       pic: user.pic,
+      token: generateToken(user._id),
     });
   }
 });

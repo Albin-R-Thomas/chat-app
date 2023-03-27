@@ -3,7 +3,7 @@ require("dotenv").config();
 const chats = require("./data/chata-dummy");
 const userRoutes = require("./routes/userRoutes");
 const cors = require("cors");
-const connectDB = require("./db/db");
+const connectDB = require("./config/db/db");
 
 connectDB();
 const app = express();
