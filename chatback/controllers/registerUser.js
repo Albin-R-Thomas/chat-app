@@ -34,4 +34,33 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = registerUser;
+const authUser = asyncHandler(async (req, res) => {
+  const { password, email} = req.body;
+  if (!password || !email) {
+    res.status(400);
+    throw new Error("Please Enter all the required fields");
+  }
+  const userExists = await User.findOne({
+    email: email,
+  });
+  if (!userExists) {
+    res.status(400);
+    throw new Error("User doesn't exists");
+  }
+  const hashedPassword = await bcrypt.compare(password, userExists.password);
+  if(!hashedPassword){
+    res.status(400);
+    throw new Error("Invalid credentials");
+  }
+  else{
+    res.status(201).json({
+      _id: userExists._id,
+      name: userExists.name,
+      email: userExists.email,
+      pic: userExists.pic,
+      token: generateToken(userExists._id),
+    });
+  }
+});
+
+module.exports = {registerUser,authUser};
