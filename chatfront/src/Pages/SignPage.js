@@ -22,7 +22,9 @@ const SignPage = () => {
           <div className="auth-text">Password</div>
           <input placeholder="Enter your Password" onChange={""} />
           <div className="auth-text">Confirm Password</div>
-          <input placeholder="Enter to Confirm Password" onChange={""} />
+          <input placeholder="Enter your Password" onChange={""} />
+          <div className="auth-text">Upload Your Picture</div>
+          <input type={"file"} className="upload-image" />
           <button className="login-button">Login</button>
           <button className="credential-button">
             Get Guest User Credentials
