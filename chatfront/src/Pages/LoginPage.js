@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../Styles/LoginPage.css";
 const LoginPage = () => {
@@ -6,6 +6,10 @@ const LoginPage = () => {
   const navigateToSignUpPage = (event) => {
     navigator.push("signup");
   };
+  const [credentials, setcredentials] = useState({email:"",password:""})
+  const onChange = (e)=>{
+    setcredentials({...setcredentials,[e.target.name]:e.target.values})
+  }
   return (
     <div className="login-parent">
       <div className="lp-heading">Chat App</div>
@@ -16,9 +20,9 @@ const LoginPage = () => {
             Sign Up
           </button>
           <div className="auth-text">Email Address</div>
-          <input placeholder="Enter your Email Address" onChange={""} />
+          <input placeholder="Enter your Email Address" name="email" onChange={onChange} />
           <div className="auth-text">Password</div>
-          <input placeholder="Enter your Password" onChange={""} />
+          <input placeholder="Enter your Password" name="password" onChange={onChange} />
           <button className="login-button">Login</button>
           <button className="credential-button">
             Get Guest User Credentials
