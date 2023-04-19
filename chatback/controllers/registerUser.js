@@ -3,7 +3,7 @@ const generateToken = require("../config/generateToken");
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
 const registerUser = asyncHandler(async (req, res) => {
-  const pic = req.file.filename
+  const pic = req?.file?.filename?req.file.filename:null
   const { name, password, email } = req.body;
   if (!name || !password || !email) {
     res.status(400);
@@ -36,7 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const authUser = asyncHandler(async (req, res) => {
-  const { password, email} = req.body;
+  const { password, email} = req.query;
   if (!password || !email) {
     res.status(400);
     throw new Error("Please Enter all the required fields");

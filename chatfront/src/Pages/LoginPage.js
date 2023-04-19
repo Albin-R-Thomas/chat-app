@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../Styles/LoginPage.css";
+import axios from "axios";
+
 const LoginPage = () => {
   const navigator = useHistory();
   const navigateToSignUpPage = (event) => {
@@ -8,7 +10,17 @@ const LoginPage = () => {
   };
   const [credentials, setcredentials] = useState({email:"",password:""})
   const onChange = (e)=>{
-    setcredentials({...setcredentials,[e.target.name]:e.target.values})
+    setcredentials({...credentials,[e.target.name]:e.target.value})
+  }
+  const submit = async(e)=>{
+    if(!credentials.email||!credentials.password){
+      alert("Please fill all the required details")
+    }
+  const token = await axios({
+    method: "get",
+    url:"http://localhost:5000/api/user/login",
+    params:credentials
+  })
   }
   return (
     <div className="login-parent">
@@ -23,7 +35,7 @@ const LoginPage = () => {
           <input placeholder="Enter your Email Address" name="email" onChange={onChange} />
           <div className="auth-text">Password</div>
           <input placeholder="Enter your Password" name="password" onChange={onChange} />
-          <button className="login-button">Login</button>
+          <button className="login-button" onClick={submit}>Login</button>
           <button className="credential-button">
             Get Guest User Credentials
           </button>
