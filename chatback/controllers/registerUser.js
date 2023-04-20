@@ -3,7 +3,7 @@ const generateToken = require("../config/generateToken");
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
 const registerUser = asyncHandler(async (req, res) => {
-  const pic = req?.file?.filename?req.file.filename:null
+  const pic = req?.file?.filename ? req.file.filename : null
   const { name, password, email } = req.body;
   if (!name || !password || !email) {
     res.status(400);
@@ -36,7 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const authUser = asyncHandler(async (req, res) => {
-  const { password, email} = req.query;
+  const { password, email } = req.query;
   if (!password || !email) {
     res.status(400);
     throw new Error("Please Enter all the required fields");
@@ -49,11 +49,11 @@ const authUser = asyncHandler(async (req, res) => {
     throw new Error("User doesn't exists");
   }
   const hashedPassword = await bcrypt.compare(password, userExists.password);
-  if(!hashedPassword){
+  if (!hashedPassword) {
     res.status(400);
     throw new Error("Invalid credentials");
   }
-  else{
+  else {
     res.status(201).json({
       _id: userExists._id,
       name: userExists.name,
@@ -64,4 +64,12 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = {registerUser,authUser};
+const allUsers = asyncHandler(async (req, res) => {
+  const keyword = req.query.search ? {
+    $or: [{ name: { $regex: req.query.search, $options: 'i' } }, { email: { $regex: req.query.search, $options: 'i' } }]
+  } : {}
+  const users = await User.find(keyword).find({ _id: { $ne: req.user._id } })
+  res.send(users)
+})
+
+module.exports = { registerUser, authUser, allUsers };
