@@ -51,4 +51,26 @@ const fetchChat = asyncHandler(async (req, res) => {
     }
 })
 
-module.exports = { accessChat, fetchChat }
+const createGroupChat = asyncHandler(async (req, res) => {
+    if (!req.body.users || !req.body.name) {
+        return res.status(400).send({ message: "Please fill all the details" });
+    }
+    const { users, name } = req.body
+    if (users.length < 2) {
+        return res.status(400).send({ message: "A group must have more than 2 users" });
+    }
+    users.push(req.user)
+    try {
+        const groupChat = await Chat.create({
+            chatName: name,
+            users: users,
+            isGroupChat: true,
+            groupAdmin: req.user
+        })
+        res.status(200).send(groupChat)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
+module.exports = { accessChat, fetchChat, createGroupChat }
