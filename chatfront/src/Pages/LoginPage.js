@@ -8,19 +8,25 @@ const LoginPage = () => {
   const navigateToSignUpPage = (event) => {
     navigator.push("signup");
   };
-  const [credentials, setcredentials] = useState({email:"",password:""})
-  const onChange = (e)=>{
-    setcredentials({...credentials,[e.target.name]:e.target.value})
+  const [credentials, setcredentials] = useState({ email: "", password: "" })
+  const onChange = (e) => {
+    setcredentials({ ...credentials, [e.target.name]: e.target.value })
   }
-  const submit = async(e)=>{
-    if(!credentials.email||!credentials.password){
+  const submit = async (e) => {
+    if (!credentials.email || !credentials.password) {
       alert("Please fill all the required details")
     }
-  const token = await axios({
-    method: "get",
-    url:"http://localhost:5000/api/user/login",
-    params:credentials
-  })
+    try {
+      const token = await axios({
+        method: "get",
+        url: "http://localhost:5000/api/user/login",
+        params: credentials
+      })
+      window.localStorage.setItem("chatToken", JSON.stringify(token.data))
+    } catch (error) {
+      console.log(error)
+    }
+    navigator.push("chats")
   }
   return (
     <div className="login-parent">
