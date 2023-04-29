@@ -6,9 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChatProvider>
-    <BrowserRouter forceRefresh={true}>
+  <BrowserRouter forceRefresh={true}>
+    <ChatProvider>
       <App />
-    </BrowserRouter>
-  </ChatProvider>
+    </ChatProvider>
+  </BrowserRouter>
+
 );

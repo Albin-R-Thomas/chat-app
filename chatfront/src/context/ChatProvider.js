@@ -3,12 +3,13 @@ import { useHistory } from "react-router-dom";
 const ChatContext = createContext()
 
 const ChatProvider = ({ children }) => {
-    const navigator = useHistory();
+    const history = useHistory();
     const [user, setUser] = useState({})
     useEffect(() => {
         const userInfo = JSON.parse(localStorage.getItem("chatToken"))
+        console.log(userInfo, "here")
         setUser(userInfo)
-    }, [navigator])
+    }, [history])
     return (
         <ChatContext.Provider value={{ user, setUser }}>{children}</ChatContext.Provider>
     )
