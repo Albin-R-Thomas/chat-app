@@ -2,8 +2,8 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import ChatPage from "./Pages/ChatPage";
 import HomePage from "./Pages/HomePage";
-import LoginPage from "./Pages/LoginPage";
-import SignPage from "./Pages/SignPage";
+import LoginPage from "./components/Authentication/LoginPage";
+import SignPage from "./components/Authentication/SignPage";
 
 function App() {
   return (

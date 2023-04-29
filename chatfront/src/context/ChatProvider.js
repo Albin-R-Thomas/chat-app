@@ -7,9 +7,11 @@ const ChatProvider = ({ children }) => {
     const [user, setUser] = useState({})
     useEffect(() => {
         const userInfo = JSON.parse(localStorage.getItem("chatToken"))
-        console.log(userInfo, "here")
         setUser(userInfo)
-    }, [history])
+        // if (!userInfo) {
+        //     history.push("/")
+        // }
+    }, [])
     return (
         <ChatContext.Provider value={{ user, setUser }}>{children}</ChatContext.Provider>
     )

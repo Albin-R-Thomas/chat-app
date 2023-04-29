@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "../Styles/LoginPage.css";
+import "../../Styles/LoginPage.css";
 import axios from "axios";
 
 const LoginPage = () => {
@@ -23,10 +23,11 @@ const LoginPage = () => {
         params: credentials
       })
       window.localStorage.setItem("chatToken", JSON.stringify(token.data))
+      navigator.push("chats")
     } catch (error) {
       console.log(error)
     }
-    navigator.push("chats")
+
   }
   return (
     <div className="login-parent">
