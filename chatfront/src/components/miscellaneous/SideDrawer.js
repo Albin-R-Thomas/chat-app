@@ -11,6 +11,14 @@ const SideDrawer = () => {
                         <div>Search User</div>
                     </div>
                     <Tooltip id="user-search-tooltip" />
+                    <div className='header-text'>
+                        Chat App
+                    </div>
+                    <div className='header-right'>
+                        <ion-icon id="notifications-img" ></ion-icon>
+                        <ion-icon name="person-circle-outline" id="ion-profile"></ion-icon>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </div>
                 </div>
 
             </div>

@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     background-color: rgb(207, 205, 205);
-    padding: 4px 4px 4px 4px
+
 }
 
 .header {
@@ -11,7 +11,10 @@
     min-height: 48px;
     background-color: rgb(255, 255, 255);
     align-items: center;
-    padding: 0px 24px 0 24px
+    justify-content: space-between;
+    margin: 4px 4px 4px 4px;
+    padding: 0px 24px 0 24px;
+
 }
 
 .search-button {
@@ -33,4 +36,29 @@
     display: flex;
     align-items: center;
     height: 10px
+}
+
+.header-text {
+    position: absolute;
+    right: 47%;
+    font-size: 32px;
+    ;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+#notifications-img {
+    height: 100%;
+    margin-right: 8px;
+}
+
+#ion-profile {
+    height: 100%;
+    width: 52px;
 }
