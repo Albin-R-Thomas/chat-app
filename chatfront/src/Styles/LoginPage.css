@@ -75,6 +75,9 @@ input {
   border-radius: 8px;
 }
 
+.login-button :hover {
+  cursor: pointer;
+}
 .credential-button {
   height: 34px;
   margin-bottom: 15px;

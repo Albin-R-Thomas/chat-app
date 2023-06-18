@@ -1,64 +1,92 @@
 .header-container {
-    display: flex;
-    width: 100%;
-    background-color: rgb(207, 205, 205);
-
+  display: flex;
+  width: 100%;
+  background-color: rgb(207, 205, 205);
 }
 
 .header {
-    display: flex;
-    width: 100%;
-    min-height: 48px;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    justify-content: space-between;
-    margin: 4px 4px 4px 4px;
-    padding: 0px 24px 0 24px;
-
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 4px 4px 4px;
+  padding: 0px 24px 0 24px;
 }
 
 .search-button {
-    display: flex;
-    height: 36px;
-    width: 126px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 36px 0 8px;
+  display: flex;
+  height: 36px;
+  width: 126px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 36px 0 8px;
 }
 
 .search-button:hover {
-    background-color: rgb(240, 240, 240);
-    border-width: 1px solid black;
-    cursor: pointer;
+  background-color: rgb(240, 240, 240);
+  border-width: 1px solid black;
+  cursor: pointer;
 }
 
 #user-search-tooltip {
-    display: flex;
-    align-items: center;
-    height: 10px
+  display: flex;
+  align-items: center;
+  height: 10px;
 }
 
 .header-text {
-    position: absolute;
-    right: 47%;
-    font-size: 32px;
-    ;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  right: 47%;
+  font-size: 32px;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    height: 36px;
+  display: flex;
+  align-items: center;
+  height: 36px;
 }
 
 #notifications-img {
-    height: 100%;
-    margin-right: 8px;
+  height: 100%;
+  margin-right: 8px;
 }
 
 #ion-profile {
-    height: 100%;
-    width: 52px;
+  height: 100%;
+  width: 52px;
+}
+
+.modal-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header {
+  font-size: 2.2rem;
+}
+
+#close-modal-circle {
+  height: 20px;
+  width: 20px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-user {
+  margin-top: 16px;
+  width: 72%;
+}
+
+.go {
+  height: 28px;
+  width: 36px;
 }

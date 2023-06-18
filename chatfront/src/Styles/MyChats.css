@@ -1,0 +1,38 @@
+.chat {
+  display: flex;
+}
+
+.my-chats-container {
+  background-color: rgb(185, 185, 255);
+  height: 40.4em;
+  width: 24%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.my-chats-header {
+  background-color: rgb(255, 164, 164);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-chats-text {
+  font-size: 36px;
+}
+
+.new-group-chat-btn {
+  background-color: rgb(205, 202, 202);
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -80px;
+}
+
+#add-chat-btn {
+  height: 28px;
+  width: 24px;
+}

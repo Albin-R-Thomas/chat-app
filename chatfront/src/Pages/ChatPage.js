@@ -1,21 +1,22 @@
-import { React, useEffect, useState } from 'react'
-import axios from 'axios'
-import { ChatState } from '../context/ChatProvider'
-import SideDrawer from '../components/miscellaneous/SideDrawer'
-import ChatBox from '../components/ChatBox'
-import MyChats from '../components/MyChats'
+import { React, useEffect, useState } from "react";
+import axios from "axios";
+import { ChatState } from "../context/ChatProvider";
+import SideDrawer from "../components/miscellaneous/SideDrawer";
+import ChatBox from "../components/ChatBox";
+import MyChats from "../components/MyChats";
+import "../Styles/MyChats.css";
 const ChatPage = () => {
-  const { user, setUser } = ChatState()
+  const { user, setUser } = ChatState();
 
   return (
-    <div className='chat_container'>
+    <div className="chat_container">
       {user && <SideDrawer />}
-      <div className='chat'>
+      <div className="chat">
         {user && <MyChats />}
         {user && <ChatBox />}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ChatPage
+export default ChatPage;
